@@ -23,8 +23,8 @@ Criar uma infraestrutura otimizada para WordPress, garantindo:
 ---
 
 ## 📄 Navegação do Projeto
-- [🔧 Documentação completa](configuracao.md)
-- [🚀 Habilidades Desenvolvidas](skills.md)
+- [🔧 Documentação completa](doc/doc.md)
+- [🚀 Habilidades Desenvolvidas](doc/skills.md)
 
 ---
 
