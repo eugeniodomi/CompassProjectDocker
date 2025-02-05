@@ -9,25 +9,24 @@
 
 [🛠️ 2. Pré-requisitos](#pre-requisitos)
 
-[☁️ 3. Criação da Rede AWS](https://www.notion.so/3-Cria-o-da-Rede-AWS-18449173e3c7801eb52ec9be6e86f8bf?pvs=21)
+[☁️ 3. Criação da Rede AWS](#criacao-da-rede-aws)
 
-[🛡️ 4. Configuração de Grupos de Segurança](https://www.notion.so/4-Configura-o-de-Grupos-de-Seguran-a-18c49173e3c7800987f3c9e8d59c8b6f?pvs=21)
+[🛡️ 4. Configuração de Grupos de Segurança](#configuracao-de-grupos-de-seguranca)
 
-[🏦 5. Preparando o Banco de Dados MySQL (RDS) ](https://www.notion.so/5-Preparando-o-Banco-de-Dados-MySQL-RDS-18449173e3c7807b8457dce10bb35ea3?pvs=21)
+[🏦 5. Preparando o Banco de Dados MySQL (RDS) ](#preparando-o-banco-de-dados-mysql-rds)
 
-[📁 6. Configuração do EFS para Arquivos Estáticos](https://www.notion.so/6-Configura-o-do-EFS-para-Arquivos-Est-ticos-18c49173e3c78085bf86d38c8e379b96?pvs=21)
+[📁 6. Configuração do EFS para Arquivos Estáticos](#configuracao-do-efs-para-arquivos-estaticos)
 
-[⬆️ 7. Configuração do Auto Scaling Group](https://www.notion.so/7-Configura-o-do-Auto-Scaling-Group-18c49173e3c78065947dc3183c62ea57?pvs=21) 
+[⬆️ 7. Configuração do Auto Scaling Group](#configuracao-do-auto-scaling-group) 
 
-[⚖️ 8. Configurando o Load Balancer](https://www.notion.so/8-Configurando-o-Load-Balancer-18449173e3c7805da639efac17ce313c?pvs=21)
+[⚖️ 8. Configurando o Load Balancer](#configurando-o-load-balancer)
 
-[🐳 9. Verificação da Configuração no Host EC2](https://www.notion.so/9-Verifica-o-da-Configura-o-no-Host-EC2-18c49173e3c7805b8946f3bb23857f0d?pvs=21)
+[🐳 9. Verificação da Configuração no Host EC2](#verificacao-da-configuracao-no-host-ec2)
 
-[📊 10. Monitoramento e Manutenção (EXTRA)](https://www.notion.so/10-Monitoramento-e-Manuten-o-EXTRA-18449173e3c780c99abef36e98fafd6c?pvs=21)
+[📊 10. Monitoramento e Manutenção (EXTRA)](#monitoramento-e-manutencao-extra)
 
-[🏁 10. Conclusão e Próximas Etapas](https://www.notion.so/10-Conclus-o-e-Pr-ximas-Etapas-18449173e3c7805b99dbc996c7aa8cd4?pvs=21)
+[🏁 11. Conclusão e Próximas Etapas](#conclusao-e-proximas-etapas)
 
-[✅ 11. Issues](https://www.notion.so/11-Issues-18c49173e3c78096b349f19ee6ab3d31?pvs=21)
 
 ---
 
@@ -75,7 +74,7 @@ O principal objetivo é criar uma infraestrutura que seja **escalável**, **alta
 
 ---
 
-# ☁️ 3. Criação da Rede AWS
+# ☁️ 3. Criação da Rede AWS <a id="criacao-da-rede-aws"></a>
 
 Nesta etapa, vamos preparar a infraestrutura na **AWS**, criando uma **VPC, sub-redes, gateways** e **tabelas de rotas** necessários para garantir um ambiente seguro e escalável para nossa aplicação.
 
@@ -160,7 +159,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 
 ---
 
-# 🛡️ 4. Configuração de Grupos de Segurança
+# 🛡️ 4. Configuração de Grupos de Segurança <a id="configuracao-de-grupos-de-seguranca"></a>
 
 ## **4.1 Grupo de Segurança para o Load Balancer (CLB)**
 
@@ -244,7 +243,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 
 ---
 
-# 🏦 5. Preparando o Banco de Dados MySQL (RDS)
+# 🏦 5. Preparando o Banco de Dados MySQL (RDS)  <a id="preparando-o-banco-de-dados-mysql-rds"></a>
 
 ## 5.1 Crie uma instância RDS MySQL na AWS.
 
@@ -296,7 +295,7 @@ Similar com **`db-id.cro2k0q12345.region.rds.amazonaws.com`**
 
 ---
 
-# 📁 6. Configuração do EFS para Arquivos Estáticos
+# 📁 6. Configuração do EFS para Arquivos Estáticos <a id="configuracao-do-efs-para-arquivos-estaticos"></a>
 
 Neste capítulo, vamos configurar o Amazon Elastic File System (EFS) para armazenar arquivos estáticos com alta disponibilidade e segurança.
 
@@ -357,7 +356,8 @@ devem ficar na mesma faixa CIDR das subnets
 - Escolha o nome do Auto Scaling Group, sugestão: **`Project2-asg`**
 - Clique em “**Create a launch template**” (caso não tenha o template, caso tenha, ignore a etapa **9.1**).
 
-## 7.1 Configuração de Template
+## 7.1 Configuração de Template <a id="configuracao-do-auto-scaling-group"></a>
+
 
 1. Nome do Template (sugestão)**: `Project2-template`** 
 2. Descrição (sugestão)**: wordpress webservers**
@@ -508,7 +508,7 @@ Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalad
 
 ---
 
-# ⚖️ 8. Configurando o Load Balancer
+# ⚖️ 8. Configurando o Load Balancer <a id="configurando-o-load-balancer"></a>
 
 ## 8.1 Criação do Classic Load Balancer (CLB)
 
@@ -579,7 +579,7 @@ Observe que: **2 of 2 instances in service**
 
 ---
 
-# 🐳 9. Verificação da Configuração no Host EC2
+# 🐳 9. Verificação da Configuração no Host EC2 <a id="verificacao-da-configuracao-no-host-ec2"></a>
 
 As instâncias EC2 foram criadas em subnets privadas, logo, você não terá acesso externo para se conectar via ssh de forma direta pelo seu terminal ou PuTTY. Mas isso não significa que não seja possível se conectar, existem algumas formas de fazer isso:
 
@@ -653,7 +653,7 @@ Ex: EC2 Instance Conn Endpoint
     ```
     
 
-# 🏁 10. Conclusão
+# 🏁 10. Conclusão <a id="monitoramento-e-manutencao-extra"></a>
 
 ## 10.1 Resumo do Projeto
 
