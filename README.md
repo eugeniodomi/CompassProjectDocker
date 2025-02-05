@@ -22,7 +22,7 @@ Criar uma infraestrutura otimizada para WordPress, garantindo:
 
 ---
 
-## 📄 Próximos Passos
+## 📄 Navegação do Projeto
 - [🔧 Documentação completa](configuracao.md)
 - [🚀 Habilidades Desenvolvidas](skills.md)
 
