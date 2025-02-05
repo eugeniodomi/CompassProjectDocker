@@ -22,6 +22,6 @@ Criar uma infraestrutura otimizada para WordPress, garantindo:
 ---
 
 ## 📄 Próximos Passos
-- [🔧 Configuração Inicial](configuracao.md)
+- [🔧 Documentação completa](configuracao.md)
 - [📌 Etapas de Implantação](etapas.md)
 - [🚀 Deploy e Monitoramento](deploy.md)
