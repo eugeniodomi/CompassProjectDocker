@@ -2,7 +2,7 @@
 
 ![projeto2-compass.png](https://vetores.org/d/compass-uol.svg)
 
-# 📖 0. Índice
+# 📖 Índice
 
 
 [🚀 1. Introdução](#introducao)
@@ -23,9 +23,8 @@
 
 [🐳 9. Verificação da Configuração no Host EC2](#verificacao-da-configuracao-no-host-ec2)
 
-[📊 10. Monitoramento e Manutenção (EXTRA)](#monitoramento-e-manutencao-extra)
+[📊 10. Conclusão](#conclusao)
 
-[🏁 11. Conclusão](#conclusao)
 
 
 ---
