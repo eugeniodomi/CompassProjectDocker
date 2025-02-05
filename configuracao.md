@@ -1,6 +1,6 @@
 # Guia Completo de Deploy de WordPress na AWS com Docker: Arquitetura Escalável e Alta Disponibilidade
 
-![projeto2-compass.png](projeto2-compass.png)
+![projeto2-compass.png](https://vetores.org/d/compass-uol.svg)
 
 # 📖 0. Índice
 
@@ -44,7 +44,7 @@ O principal objetivo é criar uma infraestrutura que seja **escalável**, **alta
 
 ## 1.2 Visão Geral da Arquitetura
 
-![{3434636C-D106-4D8E-B10F-CBE821C5CB68}.png](3434636C-D106-4D8E-B10F-CBE821C5CB68.png)
+![{3434636C-D106-4D8E-B10F-CBE821C5CB68}.png](images/1_arquitetura.png)
 
 ### **A arquitetura do projeto consiste nos seguintes componentes principais:**
 
@@ -150,7 +150,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 
 **Seu Resource Map deve se parecer com:**
 
-![image.png](image.png)
+![image.png](images/2_resource_map.png)
 
 | Subnet | AZ | Bloco CIDR | Uso Principal | Tabela de Rotas |
 | --- | --- | --- | --- | --- |
@@ -291,7 +291,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 > **Caminho: RDS Console > Databases > Clique no DB criado > Connectivity & Security**
 > 
 
-![Similar com **`db-id.cro2k0q12345.region.rds.amazonaws.com`**](image%201.png)
+![Similar com **`db-id.cro2k0q12345.region.rds.amazonaws.com`**](images/3_connectivity.png)
 
 Similar com **`db-id.cro2k0q12345.region.rds.amazonaws.com`**
 
@@ -311,7 +311,7 @@ O EFS será acessado pelas instâncias EC2 na VPC via protocolo NFS (já configu
 4. Sugestão de nome como **`Project2-efs`**.
 5. Clique em **Customize**
 
-![image.png](image%202.png)
+![image.png](images/4_file_system.png)
 
 ## 6.2 Configurações
 
@@ -345,9 +345,9 @@ O EFS será acessado pelas instâncias EC2 na VPC via protocolo NFS (já configu
 
 **Caminho: EFS > File Systems > Clique no EFS criado > Network**
 
-![image.png](image%203.png)
+![image.png](images/5_1_policy.png)
 
-![devem ficar na mesma faixa CIDR das subnets](image%204.png)
+![devem ficar na mesma faixa CIDR das subnets](images/5_2_ipaddress.png)
 
 devem ficar na mesma faixa CIDR das subnets
 
@@ -381,7 +381,8 @@ devem ficar na mesma faixa CIDR das subnets
         - **`password` — *[5.1.2 Credential Settings](https://www.notion.so/5-1-2-Credential-Settings-18f49173e3c7809f97e4d7ff0bea5673?pvs=21)***
         - **Os 2 `EFS_IP` — *[**⚠️ ANOTE Os IPs DO EFS❕**](https://www.notion.so/ANOTE-Os-IPs-DO-EFS-18c49173e3c780cbbb98f2e90fe69790?pvs=21)***
     2. Remover os <> e manter apenas os dados anotados anteriormente, para cada campo necessário como no item anterior.
-    
+
+
     ```bash
     #!/bin/bash
     
@@ -448,8 +449,8 @@ devem ficar na mesma faixa CIDR das subnets
     sudo -u ec2-user /usr/local/bin/docker-compose -f /home/ec2-user/docker-compose.yml up -d
     ```
     
-2. **Launch Template**
-3. **Voltando ao Auto Scaling Group:**
+1. **Launch Template**
+2. **Voltando ao Auto Scaling Group:**
     1. Selecione a template criada **`Project2-template`**
     2. **Next!**
 
@@ -500,9 +501,9 @@ devem ficar na mesma faixa CIDR das subnets
 
 ## 7.3 Monitore o ASG e veja se criou as instâncias
 
-![image.png](image%205.png)
+![image.png](images/6_asg.png)
 
-![Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalada no consumo de recursos, refletida no gráfico.](image%206.png)
+![Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalada no consumo de recursos, refletida no gráfico.](images/6_2_asg.png)
 
 Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalada no consumo de recursos, refletida no gráfico.
 
@@ -556,24 +557,24 @@ Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalad
 4. Selecione **Classic Load Balancers > `Project2-clb`**
 5. Vá até o final e clique em **Update**
 
-![image.png](image%207.png)
+![image.png](images/7_load.png)
 
 ## 8.3 Teste o Funcionamento
 
 1. Acesse o DNS do CLB no navegador para verificar se o WordPress está funcionando.
     
-    ![Captura de tela 2025-02-04 220150.png](6935da2a-d3ab-4a24-b511-a02ac02a530d.png)
+    ![Captura de tela 2025-02-04 220150.png](images/8_wp.png)
     
-    ![configuracoes.png](01d866c8-e328-4519-9cd2-77058e08e033.png)
+    ![configuracoes.png](images/8_2wp.png)
     
 
 1. Inicie uma conta wordpress e compartilhe o link com terceiros para verificar o funcionamento do site.
     
-    ![image.png](image%208.png)
+    ![image.png](images/9_compasslogo.png)
     
 2. Verifique se as instâncias do Auto Scaling Group estão sendo registradas corretamente.
 
-![Observe que: **2 of 2 instances in service**](Screenshot_20250201_052853.png)
+![Observe que: **2 of 2 instances in service**](images/10_loadbalancer.png)
 
 Observe que: **2 of 2 instances in service**
 
@@ -605,7 +606,7 @@ Para criar um endpoint que te permita se conectar as instâncias **EC2,** deve i
     > 
 - **Criar Endpoint > Demora um pouco para configurar completamente.**
 
-![image.png](image%209.png)
+![image.png](images/11_.png)
 
 ## 9.2 Usando o Endpoint para se conectar as instâncias
 
@@ -618,7 +619,7 @@ Para entrar na instância EC2 e verificar, editar, monitorar processos entre out
 - username**: ec2-user**
 - Max tunnel duration (seconds)**: 3600**
 
-![Ex: EC2 Instance Conn Endpoint](ace9c9ce-ad8b-49ee-82b2-5c5f78928845.png)
+![Ex: EC2 Instance Conn Endpoint](images/12_enndpoint.png)
 
 Ex: EC2 Instance Conn Endpoint
 
