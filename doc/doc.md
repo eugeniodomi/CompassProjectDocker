@@ -41,7 +41,7 @@ O principal objetivo é criar uma infraestrutura que seja **escalável**, **alta
 
 ## 1.2 Visão Geral da Arquitetura
 
-![{3434636C-D106-4D8E-B10F-CBE821C5CB68}.png](images/1_arquitetura.png)
+![{3434636C-D106-4D8E-B10F-CBE821C5CB68}.png](../images/1_arquitetura.png)
 
 ### **A arquitetura do projeto consiste nos seguintes componentes principais:**
 
@@ -147,7 +147,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 
 **Seu Resource Map deve se parecer com:**
 
-![image.png](images/2_resource_map.png)
+![image.png](../images/2_resource_map.png)
 
 | Subnet | AZ | Bloco CIDR | Uso Principal | Tabela de Rotas |
 | --- | --- | --- | --- | --- |
@@ -254,7 +254,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 - Template**: Free tier**
 - DB instance identifier**: `project2-db` —**  atualização do **endpoint** da instância RDS, apontando para o novo endereço de conexão.
 
-### 5.1.2 Credential Settings
+### 5.1.2 Credential Settings <a id="credential-settings"></a>
 
 - Master username**: `<user>` (escolha um nome de usuário, e anote-o)**
 - Credentials management**: self managed**
@@ -288,7 +288,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 > **Caminho: RDS Console > Databases > Clique no DB criado > Connectivity & Security**
 > 
 
-![Similar com **`db-id.cro2k0q12345.region.rds.amazonaws.com`**](images/3_connectivity.png)
+![Similar com **`db-id.cro2k0q12345.region.rds.amazonaws.com`**](../images/3_connectivity.png)
 
 Similar com **`db-id.cro2k0q12345.region.rds.amazonaws.com`**
 
@@ -308,7 +308,7 @@ O EFS será acessado pelas instâncias EC2 na VPC via protocolo NFS (já configu
 4. Sugestão de nome como **`Project2-efs`**.
 5. Clique em **Customize**
 
-![image.png](images/4_file_system.png)
+![image.png](../images/4_file_system.png)
 
 ## 6.2 Configurações
 
@@ -342,11 +342,11 @@ O EFS será acessado pelas instâncias EC2 na VPC via protocolo NFS (já configu
 
 **Caminho: EFS > File Systems > Clique no EFS criado > Network**
 
-![image.png](images/5_1_policy.png)
+![image.png](../images/5_1_policy.png)
 
-![devem ficar na mesma faixa CIDR das subnets](images/5_2_ipaddress.png)
+![devem ficar na mesma faixa CIDR das subnets](../images/5_2_ipaddress.png)
 
-devem ficar na mesma faixa CIDR das subnets
+Devem estar na mesma faixa CIDR das sub-redes configuradas.
 
 ---
 
@@ -375,7 +375,7 @@ devem ficar na mesma faixa CIDR das subnets
 1. **Edite os seguintes parâmetros antes de salvar o script:**
     1. **Obs: Foi citado anteriormente para anotarem valores ao longo do processo descrito na documentação:**
         - **`rds-endpoint` —  *[**5.2 ⚠️ ANOTE O Endpoint DO RDS❕**](https://www.notion.so/5-2-ANOTE-O-Endpoint-DO-RDS-18c49173e3c78080b980c9e5653bde4a?pvs=21)***
-        - **`user` — *[5.1.2 Credential Settings](https://www.notion.so/5-1-2-Credential-Settings-18f49173e3c7809f97e4d7ff0bea5673?pvs=21)***
+        - **`user` — *[5.1.2 Credential Settings](#credential-settings)***
         - **`password` — *[5.1.2 Credential Settings](https://www.notion.so/5-1-2-Credential-Settings-18f49173e3c7809f97e4d7ff0bea5673?pvs=21)***
         - **Os 2 `EFS_IP` — *[**⚠️ ANOTE Os IPs DO EFS❕**](https://www.notion.so/ANOTE-Os-IPs-DO-EFS-18c49173e3c780cbbb98f2e90fe69790?pvs=21)***
     2. Remover os <> e manter apenas os dados anotados anteriormente, para cada campo necessário como no item anterior.
@@ -499,9 +499,9 @@ devem ficar na mesma faixa CIDR das subnets
 
 ## 7.3 Monitore o ASG e veja se criou as instâncias
 
-![image.png](images/6_asg.png)
+![image.png](../images/6_asg.png)
 
-![Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalada no consumo de recursos, refletida no gráfico.](images/6_2_asg.png)
+![Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalada no consumo de recursos, refletida no gráfico.](../images/6_2_asg.png)
 
 Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalada no consumo de recursos, refletida no gráfico.
 
@@ -555,24 +555,24 @@ Se a utilização da CPU ultrapassar 70% por alguns minutos, haverá uma escalad
 4. Selecione **Classic Load Balancers > `Project2-clb`**
 5. Vá até o final e clique em **Update**
 
-![image.png](images/7_load.png)
+![image.png](../images/7_load.png)
 
 ## 8.3 Teste o Funcionamento
 
 1. Acesse o DNS do CLB no navegador para verificar se o WordPress está funcionando.
     
-    ![Captura de tela 2025-02-04 220150.png](images/8_wp.png)
+    ![Captura de tela 2025-02-04 220150.png](../images/8_wp.png)
     
-    ![configuracoes.png](images/8_2wp.png)
+    ![configuracoes.png](../images/8_2wp.png)
     
 
 1. Inicie uma conta wordpress e compartilhe o link com terceiros para verificar o funcionamento do site.
     
-    ![image.png](images/9_compasslogo.png)
+    ![image.png](../images/9_compasslogo.png)
     
 2. Verifique se as instâncias do Auto Scaling Group estão sendo registradas corretamente.
 
-![Observe que: **2 of 2 instances in service**](images/10_loadbalancer.png)
+![Observe que: **2 of 2 instances in service**](../images/10_loadbalancer.png)
 
 Observe que: **2 of 2 instances in service**
 
@@ -604,7 +604,7 @@ Para criar um endpoint que te permita se conectar as instâncias **EC2,** deve i
     > 
 - **Criar Endpoint > Demora um pouco para configurar completamente.**
 
-![image.png](images/11_.png)
+![image.png](../images/11_.png)
 
 ## 9.2 Usando o Endpoint para se conectar as instâncias
 
@@ -617,7 +617,7 @@ Para entrar na instância EC2 e verificar, editar, monitorar processos entre out
 - username**: ec2-user**
 - Max tunnel duration (seconds)**: 3600**
 
-![Ex: EC2 Instance Conn Endpoint](images/12_enndpoint.png)
+![Ex: EC2 Instance Conn Endpoint](../images/12_enndpoint.png)
 
 Ex: EC2 Instance Conn Endpoint
 
