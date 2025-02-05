@@ -279,7 +279,7 @@ Esse **NAT Gateway** permitirá que as instâncias nas **subnets privadas** aces
 - Maintenance**: Desabilitado**
 - Deletion protection**: Desabilitado**
 
-## **5.2 ⚠️ ANOTE O Endpoint DO RDS❕**
+## **5.2 ⚠️ ANOTE O Endpoint DO RDS❕** <a id="rds-5-2"></a>
 
 **Isto é para conseguir configurar futuramente as credenciais do arquivo `docker-compose.yml`.** 
 
@@ -335,7 +335,7 @@ O EFS será acessado pelas instâncias EC2 na VPC via protocolo NFS (já configu
 
 **Não precisa selecionar nada nesta etapa, deixe como está (padrão) e prossiga.** 
 
-### 6.2.4 Review **> Agora, é só confirmar!**
+### 6.2.4 Review **> Agora, é só confirmar!** <a id="efs-ip"></a>
 
 > **⚠️ ANOTE Os IPs DO EFS❕**
 > 
@@ -374,10 +374,10 @@ Devem estar na mesma faixa CIDR das sub-redes configuradas.
 
 1. **Edite os seguintes parâmetros antes de salvar o script:**
     1. **Obs: Foi citado anteriormente para anotarem valores ao longo do processo descrito na documentação:**
-        - **`rds-endpoint` —  *[**5.2 ⚠️ ANOTE O Endpoint DO RDS❕**](https://www.notion.so/5-2-ANOTE-O-Endpoint-DO-RDS-18c49173e3c78080b980c9e5653bde4a?pvs=21)***
+        - **`rds-endpoint` —  *[**5.2 ⚠️ ANOTE O Endpoint DO RDS❕**](#rds-5-2)***
         - **`user` — *[5.1.2 Credential Settings](#credential-settings)***
-        - **`password` — *[5.1.2 Credential Settings](https://www.notion.so/5-1-2-Credential-Settings-18f49173e3c7809f97e4d7ff0bea5673?pvs=21)***
-        - **Os 2 `EFS_IP` — *[**⚠️ ANOTE Os IPs DO EFS❕**](https://www.notion.so/ANOTE-Os-IPs-DO-EFS-18c49173e3c780cbbb98f2e90fe69790?pvs=21)***
+        - **`password` — *[5.1.2 Credential Settings](#credential-settings)***
+        - **Os 2 `EFS_IP` — *[**⚠️ ANOTE Os IPs DO EFS❕**](#efs-ip)***
     2. Remover os <> e manter apenas os dados anotados anteriormente, para cada campo necessário como no item anterior.
 
 
