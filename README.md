@@ -36,6 +36,6 @@ Este projeto foi desenvolvido por:
 Apaixonado por tecnologia, atua na área de **DevSecOps** com foco em **segurança, infraestrutura em nuvem e automação**. Possui experiência com **AWS, Docker, segurança de redes e desenvolvimento de software**.  
 
 ### 🧑‍💻 Gabriel Gomes  
-Entusiasta de **data science e cloud computing**, com interesse em **arquitetura de sistemas escaláveis e segurança da informação**. Experiência em **programação, containers e infraestrutura como código**.  
+Entusiasta de **cybersecurity e infra**, com interesse em **arquitetura de sistemas escaláveis e segurança da informação**. Experiência em **programação, containers e infraestrutura como código**.  
 
 Ambos compartilham a missão de construir soluções **seguras, eficientes e escaláveis** para o ambiente em nuvem. 🚀  
